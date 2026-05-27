@@ -1,0 +1,196 @@
+html{
+    scroll-behavior: smooth;
+}
+body{
+    background-color: #F1E2D1 ;
+}
+
+header {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center; /* Changed from space-evenly */
+    gap: 40px;               /* Adds equal spacing between all items */
+    align-items: center;
+    font-family: "DM Serif Display", serif;
+    font-weight: 400;
+    font-style: normal;
+    background-color: #DCC3AA;
+    position: fixed;
+    height: 60px;
+}
+
+.headerItem{
+    padding-right: 10px;
+    margin-right: 110px;
+}
+
+
+.anchor{
+    color: #541A1A;
+    text-decoration: none;
+    font-size: larger;
+    display: inline-block;
+    font-weight: 600;
+}
+
+.gallery{
+    padding:100px
+}
+.grid-container{
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(3,1fr);
+
+    gap: 20px;
+}
+.grid-container img {
+    width: 100%;
+    height: 400px;
+
+    object-fit: cover;
+
+    border-radius: 20px;
+}
+.card{
+    text-align: center;
+        color: #541A1A;
+
+}
+
+.card h1{
+    font-family: "DM Serif Display", serif;
+    color: #541A1A;
+}
+
+#Reserve{
+    background-color: #541A1A;
+    color: #F1E2D1;
+    border: #F1E2D1;
+    border-radius: 50px;
+    width: 300px;
+    height: 100px;
+    font-family: "Lavishly Yours", cursive;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 2rem;
+}
+#Reserve:hover{
+    background-color:#633535 ;
+}
+#Reserve:active{
+    filter:brightness(0.5)
+}
+/* span element */
+#your{
+    font-family: "Lavishly Yours", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
+
+.accordion{
+    text-align: left;
+    background-color: #DCC3AA;
+    color: #541A1A;
+    cursor: pointer;
+    padding: 18px;
+    width: 100%;
+    border: none;
+    outline: none;
+    transition: 0.4s;
+    
+}
+ 
+.active, .accordion:hover{
+    background-color: #DCC3AA;
+}
+
+.accordion:after {
+  content: '\02795'; /* Unicode character for "plus" sign (+) */
+  font-size: 13px;
+  color: #777;
+  float: right;
+  margin-left: 5px;
+  
+}
+
+.active:after {
+  content: "\2796"; /* Unicode character for "minus" sign (-) */
+}
+
+.panel
+{
+    
+    padding: 0 18px;
+    background-color: #DCC3AA;
+    display: none;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+    border-color: black;
+       
+}
+
+footer{
+    color: #DCC3AA;
+    background-color: #541A1A;
+    width: 100%;
+    padding-bottom: 10px;
+    text-align: center;
+}
+
+#About{
+    text-align: center;
+    color: #DCC3AA;
+    font-family: "DM Serif Display", serif;
+    font-weight: 400;
+    font-style: normal;
+    margin-bottom:30px;
+}
+
+#menu-toggle{
+    display: inline;      
+    width: max-content; 
+    margin-top: 150px;
+    margin-left:45%;
+    color: #541A1A;
+    background-color: rgba(255, 255, 255, 0);
+    border-color: rgba(255, 255, 255, 0);
+    font-family: "Finger Paint", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+#collapsible-menu{
+
+    max-height: 0;
+    overflow: hidden;    
+    transition: max-height 0.3s ease-out;
+    background-color: #DCC3AA;
+
+}
+
+#collapsible-menu.expanded
+{
+    max-height: 200px;
+}
+
+#collapsible-menu ul{
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+#collapsible-menu li a{
+    display: block;
+    padding:12px 16px;
+    text-decoration: none;
+    color: black;
+}
+#collapsible-menu li a:hover{
+    background-color: #541A1A;
+}
