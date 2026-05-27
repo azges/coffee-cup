@@ -16,3 +16,12 @@ for (i = 0; i < acc.length; i++) {
     }
   });
 }
+
+// Select the button and the menu
+const toggleBtn = document.getElementById('menu-toggle');
+const menu = document.getElementById('collapsible-menu');
+
+// Add a click event to toggle the class
+toggleBtn.addEventListener('click', () => {
+  menu.classList.toggle('expanded');
+});
