@@ -17,6 +17,29 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Finger+Paint&display=swap" rel="stylesheet">
+    <style>
+        /* Responsive media queries for the page */
+        @media (max-width: 1024px) {
+            header { display:flex; flex-wrap:wrap; justify-content:center; }
+            header nav.headerItem { margin:6px; }
+            .gallery .grid-container { display:grid; grid-template-columns:repeat(2,1fr); gap:8px; }
+            .gallery .grid-container img { width:100%; height:auto; object-fit:cover; }
+            .card { display:block; padding:16px; }
+            .card div { margin-bottom:16px; }
+            #collapsible-menu { width:100%; }
+            #menu-toggle { display:inline-block; }
+        }
+        @media (max-width: 600px) {
+            header { flex-direction:column; align-items:stretch; }
+            header nav.headerItem { width:100%; text-align:center; }
+            .gallery .grid-container { grid-template-columns:1fr; }
+            .card { padding:12px; }
+            #menu-toggle { width:100%; padding:10px; font-size:16px; }
+            .grid-container img { max-width:100%; height:auto; display:block; }
+            .anchor { display:block; padding:12px 0; }
+            footer h2, .card h1, .card h2 { text-align:center; }
+        }
+    </style>
 </head>
 <body>
 
@@ -44,14 +67,14 @@
   <path d="M4.759 5.833A3.501 3.501 0 0 1 11.559 7a.5.5 0 0 1-1 0 2.5 2.5 0 0 0-4.857-.833.5.5 0 1 1-.943-.334m.3 1.67a.5.5 0 0 1 .449.546 10.7 10.7 0 0 1-.4 2.031l-1.222 4.072a.5.5 0 1 1-.958-.287L4.15 9.793a9.7 9.7 0 0 0 .363-1.842.5.5 0 0 1 .546-.449Zm6 .647a.5.5 0 0 1 .5.5c0 1.28-.213 2.552-.632 3.762l-1.09 3.145a.5.5 0 0 1-.944-.327l1.089-3.145c.382-1.105.578-2.266.578-3.435a.5.5 0 0 1 .5-.5Z"/>
   <path d="M3.902 4.222a5 5 0 0 1 5.202-2.113.5.5 0 0 1-.208.979 4 4 0 0 0-4.163 1.69.5.5 0 0 1-.831-.556m6.72-.955a.5.5 0 0 1 .705-.052A4.99 4.99 0 0 1 13.059 7v1.5a.5.5 0 1 1-1 0V7a3.99 3.99 0 0 0-1.386-3.028.5.5 0 0 1-.051-.705M3.68 5.842a.5.5 0 0 1 .422.568q-.044.289-.044.59c0 .71-.1 1.417-.298 2.1l-1.14 3.923a.5.5 0 1 1-.96-.279L2.8 8.821A6.5 6.5 0 0 0 3.058 7q0-.375.054-.736a.5.5 0 0 1 .568-.422m8.882 3.66a.5.5 0 0 1 .456.54c-.084 1-.298 1.986-.64 2.934l-.744 2.068a.5.5 0 0 1-.941-.338l.745-2.07a10.5 10.5 0 0 0 .584-2.678.5.5 0 0 1 .54-.456"/>
   <path d="M4.81 1.37A6.5 6.5 0 0 1 14.56 7a.5.5 0 1 1-1 0 5.5 5.5 0 0 0-8.25-4.765.5.5 0 0 1-.5-.865m-.89 1.257a.5.5 0 0 1 .04.706A5.48 5.48 0 0 0 2.56 7a.5.5 0 0 1-1 0c0-1.664.626-3.184 1.655-4.333a.5.5 0 0 1 .706-.04ZM1.915 8.02a.5.5 0 0 1 .346.616l-.779 2.767a.5.5 0 1 1-.962-.27l.778-2.767a.5.5 0 0 1 .617-.346m12.15.481a.5.5 0 0 1 .49.51c-.03 1.499-.161 3.025-.727 4.533l-.07.187a.5.5 0 0 1-.936-.351l.07-.187c.506-1.35.634-2.74.663-4.202a.5.5 0 0 1 .51-.49"/>
-</svg> Menu
+</svg> Menu & Others
 </button>
 <nav id="collapsible-menu" class="collapsed">
     <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#services">Services</a></li>
-        <li><a href="#contact">Contact Us</a></li>
+        <li><a href="menu.html">Menu</a></li>
+        <li><a href="#About">About</a></li>
+        <li><a href="#services">Services</a></li> <!-- add popup with list of services here later-->
+         <li><a href="#contact">Contact Us</a></li> <!-- add popup with contact information here later -->
     </ul>
 
 </nav>
@@ -62,8 +85,8 @@
 
     <section class="gallery">
         <div class="grid-container">
-            <img src="picture1.png">
-            <img src="picture2.png">
+            <img src="/picture1.png">
+            <img src="/picture2.png">
             <img src="picture3.png">
         </div>
     </section>
