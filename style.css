@@ -1,231 +1,277 @@
 html{
-    scroll-behavior: smooth;
-}
-body{
-    background-color: #F1E2D1 ;
+    scroll-behavior:smooth;
 }
 
-header {
-    width: 100%;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: nowrap;
-    justify-content: center; /* Changed from space-evenly */
-    gap: 40px;               /* Adds equal spacing between all items */
-    align-items: center;
-    font-family: "DM Serif Display", serif;
-    font-weight: 400;
-    font-style: normal;
-    background-color: #DCC3AA;
-    position: fixed;
-    height: 60px;
+body{
+    background-color:#F1E2D1;
+    margin:0;
+    padding:0;
+}
+
+/* HEADER */
+
+header{
+    width:100%;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:40px;
+    background-color:#DCC3AA;
+    position:fixed;
+    top:0;
+    height:60px;
+    z-index:1000;
+    font-family:"DM Serif Display", serif;
 }
 
 .headerItem{
-    padding-right: 10px;
-    margin-right: 110px;
-    transition: transform .2s ease, border-color .2s ease; 
-}
-
-.anchor:hover{
-    color: #b48e67;
-    transform: translateY(-3px);
+    margin-right:40px;
 }
 
 .anchor{
-    color: #541A1A;
-    text-decoration: none;
-    font-size: larger;
-    display: inline-block;
-    font-weight: 600;
+    color:#541A1A;
+    text-decoration:none;
+    font-size:larger;
+    font-weight:600;
+    transition:0.2s ease;
+    display:inline-block;
 }
+
+.anchor:hover{
+    color:#b48e67;
+    transform:translateY(-3px);
+}
+
+/* MENU TOGGLE */
+
+#menu-toggle{
+    display:block;
+    margin:100px auto 0 auto;
+    width:max-content;
+    color:#541A1A;
+    background-color:transparent;
+    border:none;
+    font-family:"Finger Paint", sans-serif;
+    font-size:1rem;
+    cursor:pointer;
+}
+
+#menu-toggle:hover{
+    color:#b48e67;
+}
+
+#collapsible-menu{
+    max-height:0;
+    overflow:hidden;
+    transition:max-height 0.3s ease-out;
+    background-color:#DCC3AA;
+    width:100%;
+}
+
+#collapsible-menu.expanded{
+    max-height:200px;
+}
+
+#collapsible-menu ul{
+    list-style:none;
+    margin:0;
+    padding:0;
+}
+
+#collapsible-menu li a{
+    display:block;
+    padding:12px 16px;
+    text-decoration:none;
+    color:black;
+}
+
+#collapsible-menu li a:hover{
+    background-color:#541A1A;
+    color:#DCC3AA;
+}
+
+/* GALLERY */
 
 .gallery{
-    padding:100px
+    padding:50px;
 }
+
 .grid-container{
-    width: 90%;
-    max-width: 1200px;
-    margin: auto;
+    width:90%;
+    max-width:1200px;
+    margin:auto;
 
-    display: grid;
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
 
-    grid-template-columns: repeat(3,1fr);
-
-    gap: 20px;
+    gap:20px;
 }
-.grid-container img {
-    width: 100%;
-    height: 400px;
-    object-fit: cover;
-    border-radius: 20px;
-    transition: transform .2s ease, border-color .2s ease; 
-    
-    
+
+.grid-container img{
+    width:100%;
+    height:400px;
+    object-fit:cover;
+    border-radius:20px;
+    transition:0.2s ease;
 }
 
 .grid-container img:hover{
-    transform: translateY(-10px);
+    transform:translateY(-10px);
 }
 
+/* CARD */
 
 .card{
-    text-align: center;
-        color: #541A1A;
-
+    text-align:center;
+    color:#541A1A;
+    padding:20px;
 }
 
 .card h1{
-    font-family: "DM Serif Display", serif;
-    color: #541A1A;
+    font-family:"DM Serif Display", serif;
 }
 
+#your{
+    font-family:"Lavishly Yours", cursive;
+}
+
+/* RESERVE BUTTON */
+
 #Reserve{
-    background-color: #541A1A;
-    color: #F1E2D1;
-    border: #F1E2D1;
-    border-radius: 50px;
-    width: 300px;
-    height: 100px;
-    font-family: "Lavishly Yours", cursive;
-    font-weight: 400;
-    font-style: normal;
-    font-size: 2rem;
-    transition: transform .2s ease, border-color .2s ease; 
+    background-color:#541A1A;
+    color:#F1E2D1;
+    border:none;
+    border-radius:50px;
+    width:300px;
+    height:100px;
+
+    font-family:"Lavishly Yours", cursive;
+    font-size:2rem;
+
+    transition:0.2s ease;
+    cursor:pointer;
 }
+
 #Reserve:hover{
-    background-color:#633535 ;
-    transform: translateY(-5px);
+    background-color:#633535;
+    transform:translateY(-5px);
 }
+
 #Reserve:active{
     filter:brightness(0.5);
 }
-/* span element */
-#your{
-    font-family: "Lavishly Yours", cursive;
-  font-weight: 400;
-  font-style: normal;
-}
+
+/* FAQ */
 
 .accordion{
-    text-align: left;
-    background-color: #DCC3AA;
-    color: #541A1A;
-    cursor: pointer;
-    padding: 18px;
-    width: 100%;
-    border: none;
-    outline: none;
-    transition: 0.4s;
-    
-}
- 
-.active, .accordion:hover{
-    background-color: #DCC3AA;
+    text-align:left;
+    background-color:#DCC3AA;
+    color:#541A1A;
+    cursor:pointer;
+    padding:18px;
+    width:100%;
+    border:none;
+    outline:none;
+    transition:0.4s;
+    margin-top:10px;
 }
 
-.accordion:after {
-  content: '\02795'; /* Unicode character for "plus" sign (+) */
-  font-size: 13px;
-  color: #777;
-  float: right;
-  margin-left: 5px;
-  
+.accordion:hover{
+    background-color:#cbb095;
 }
 
-.active:after {
-  content: "\2796"; /* Unicode character for "minus" sign (-) */
+.accordion:after{
+    content:'\02795';
+    font-size:13px;
+    float:right;
 }
 
-.panel {
-    /* Change padding from '0 18px' to just horizontal padding */
-    padding: 0 18px; 
-    background-color: #DCC3AA;
-    max-height: 0;
-    overflow: hidden;
-    transition: max-height 0.2s ease-out;
-    border-color: black;
+.active:after{
+    content:"\2796";
 }
 
-/* Add this new rule to handle the vertical spacing safely */
-.panel p {
-    margin: 0;
-    padding: 14px 0; /* This creates the top/bottom space smoothly */
+.panel{
+    padding:0 18px;
+    background-color:#DCC3AA;
+    max-height:0;
+    overflow:hidden;
+    transition:max-height 0.3s ease-out;
 }
 
 .panel p{
     margin:0;
-    padding: 14px 0;
+    padding:14px 0;
 }
 
-.active, .accordion:hover {
-    background-color: #cbb095; /* Tweaked slightly so users see a hover effect */
-}
+/* FOOTER */
 
 footer{
     color: #DCC3AA;
     background-color: #541A1A;
     width: 100%;
-    padding-bottom: 10px;
+    padding: 20px;
     text-align: center;
+    box-sizing:border-box;
 }
+
 
 #About{
-    text-align: center;
-    color: #DCC3AA;
-    font-family: "DM Serif Display", serif;
-    font-weight: 400;
-    font-style: normal;
-    margin-bottom:30px;
+    font-family:"DM Serif Display", serif;
 }
 
-#menu-toggle{
-    display: inline;      
-    width: max-content; 
-    margin-top: 150px;
-    margin-left:45%;
-    color: #541A1A;
-    background-color: rgba(255, 255, 255, 0);
-    border-color: rgba(255, 255, 255, 0);
-    font-family: "Finger Paint", sans-serif;
-    font-weight: 400;
-    font-style: normal;
-}
-#menu-toggle:hover{
-    color: #b48e67;
-}
+/* TABLET */
 
-#collapsible-menu{
+@media (max-width:1024px){
 
-    max-height: 0;
-    overflow: hidden;    
-    transition: max-height 0.3s ease-out;
-    background-color: #DCC3AA;
+    .grid-container{
+        grid-template-columns:repeat(2,1fr);
+    }
 
 }
 
-#collapsible-menu.expanded
-{
-    max-height: 200px;
-}
+/* MOBILE */
 
-#collapsible-menu ul{
-    list-style-type: none;
-    padding: 0;
-    margin: 0;
-}
+@media (max-width:600px){
 
-#collapsible-menu li a{
-    display: block;
-    padding:12px 16px;
-    text-decoration: none;
-    color: black;
-}
-#collapsible-menu li a:hover{
-    background-color: #541A1A;
-    color: #DCC3AA;
-}
+    header{
+        display:flex;
+        justify-content:center;
+        align-items:center;
+    }
 
-#collapsible-menu li a:active{
-    filter:brightness(0.5);
+    /* Hide all header items */
+    header .headerItem{
+        display:none;
+    }
+
+    /* Show only Reserve */
+    header .headerItem:nth-child(2){
+        display:block;
+        margin:0;
+    }
+
+    #menu-toggle{
+        display:block;
+        margin:100px auto 0 auto;
+        text-align:center;
+    }
+
+    .gallery{
+        padding:20px;
+    }
+
+    .grid-container{
+        grid-template-columns:1fr;
+    }
+
+    .grid-container img{
+        height:auto;
+    }
+
+    #Reserve{
+        width:220px;
+        height:80px;
+        font-size:1.5rem;
+    }
+
 }
