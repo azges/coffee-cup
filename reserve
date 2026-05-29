@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Lavishly+Yours&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Finger+Paint&display=swap" rel="stylesheet">
+
+<title>Reserve</title>
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    background-color:#F1E2D1;
+    font-family:Arial, Helvetica, sans-serif;
+}
+
+#home{
+        font-family: "Finger Paint", sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        background-color: rgba(0,0,0,0);
+        border-color: rgba(0,0,0,0);
+        display: block;
+        width: fit-content;
+        margin: 12px auto;
+        }
+        #home a{
+            text-decoration: none;
+            color: #541A1A;
+        }
+
+.container{
+    display:grid;
+    grid-template-columns:35% 65%;
+    min-height:100vh;
+}
+
+/* LEFT SIDE */
+
+.left-column{
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    gap:30px;
+    padding:30px;
+}
+
+.left-column img{
+    width:100%;
+    max-width:400px;
+    border-radius:15px;
+    box-shadow:0 5px 15px rgba(0,0,0,0.2);
+}
+
+.reserve-btn{
+    padding:15px 40px;
+    border:none;
+    border-radius:50px;
+    background:#541A1A;
+    color:white;
+    font-family:"Lavishly Yours", cursive;
+    font-size:2rem;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+.reserve-btn:hover{
+    transform:scale(1.05);
+}
+
+/* RIGHT SIDE */
+
+.right-column{
+    display:grid;
+    grid-template-columns:80px 1fr 80px;
+    align-items:center;
+    padding:20px;
+}
+
+.arrow{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    cursor:pointer;
+    font-size:60px;
+    transition:0.3s;
+    user-select:none;
+}
+
+.arrow:hover{
+    transform:scale(1.2);
+}
+
+.card{
+    background:white;
+    border-radius:20px;
+    padding:25px;
+    min-height:700px;
+    box-shadow:0 5px 20px rgba(0,0,0,0.15);
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    gap:20px;
+    transition:0.3s;
+}
+
+.card img{
+    width:100%;
+    max-width:500px;
+    height:300px;
+    object-fit:cover;
+    border-radius:15px;
+}
+
+.card h2{
+    font-size:36px;
+}
+
+.price{
+    font-size:28px;
+    font-weight:bold;
+    color:#3B2F2F;
+}
+
+.features{
+    width:100%;
+    max-width:500px;
+}
+
+.features li{
+    
+    margin:12px 0;
+    font-size:20px;
+}
+
+.fade{
+    opacity:0;
+}
+
+/* MOBILE */
+
+@media(max-width:900px){
+
+    .container{
+        grid-template-columns:1fr;
+    }
+
+    .left-column{
+        padding-top:40px;
+    }
+
+    .card{
+        min-height:auto;
+    }
+
+}
+
+</style>
+</head>
+<body>
+
+<button id="home">
+        <a href="index.html">Home</a>
+    </button>
+
+<div class="container">
+
+    <div class="left-column">
+
+        <img
+        src="https://images.unsplash.com/photo-1554118811-1e0d58224f24?q=80&w=1200"
+        alt="Cafe">
+
+        <button class="reserve-btn">
+            Reserve
+        </button>
+
+    </div>
+
+    <div class="right-column">
+
+        <span class="material-icons arrow" id="left">
+            chevron_left
+        </span>
+
+        <div class="card">
+
+            <img id="package-image">
+
+            <h2 id="package-name"></h2>
+
+            <div class="price" id="price"></div>
+
+            <ul class="features" id="features-list"></ul>
+
+        </div>
+
+        <span class="material-icons arrow" id="right">
+            chevron_right
+        </span>
+
+    </div>
+
+</div>
+
+<script>
+
+const packages = [
+
+{
+    name: "Standard",
+    price: "15 JOD",
+    image: "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=1200",
+    features: [
+        "Indoor seating",
+        "Free WiFi",
+        "Complimentary water",
+        "Up to 2 guests",
+        "90-minute reservation"
+    ]
+},
+
+{
+    name: "Premium",
+    price: "25 JOD",
+    image: "https://images.unsplash.com/photo-1414235077428-338989a2e8c0?q=80&w=1200",
+    features: [
+        "Window seating",
+        "Free dessert",
+        "Priority service",
+        "Up to 4 guests",
+        "120-minute reservation"
+    ]
+}
+
+];
+
+let current = 0;
+
+const packageName =
+document.getElementById("package-name");
+
+const packageImage =
+document.getElementById("package-image");
+
+const price =
+document.getElementById("price");
+
+const featureList =
+document.getElementById("features-list");
+
+const card =
+document.querySelector(".card");
+
+function updateCard(){
+
+    card.classList.add("fade");
+
+    setTimeout(() => {
+
+        packageName.textContent =
+        packages[current].name;
+
+        packageImage.src =
+        packages[current].image;
+
+        price.textContent =
+        packages[current].price;
+
+        featureList.innerHTML = "";
+
+        packages[current].features.forEach(feature => {
+
+            const li =
+            document.createElement("li");
+
+            li.textContent = "✓ " + feature;
+
+            featureList.appendChild(li);
+
+        });
+
+        card.classList.remove("fade");
+
+    },150);
+
+}
+
+document
+.getElementById("right")
+.addEventListener("click", () => {
+
+    current =
+    (current + 1) % packages.length;
+
+    updateCard();
+
+});
+
+document
+.getElementById("left")
+.addEventListener("click", () => {
+
+    current =
+    (current - 1 + packages.length)
+    % packages.length;
+
+    updateCard();
+
+});
+
+updateCard();
+
+</script>
+
+</body>
+</html>
