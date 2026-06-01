@@ -280,6 +280,26 @@ footer{
     
 }
 
+#openContactModal{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1rem;
+    text-align: left;
+    display: inline-block;
+    width: 100%;
+    background-color:#DCC3AA;
+    border-color: rgba(0, 0, 0, 0);
+    padding:10px 10px ;
+}
+#openContactModal:hover{
+    background-color: #541A1A;
+    color: #cbb095;
+}
+#closeContactModal{
+    background-color: #541A1A;
+    border-radius: 50px;
+    color: #F1E2D1;
+    border-color: rgba(0, 0, 0, 0);
+}
 #closeModal{
     background-color: #541A1A;
     border-radius: 50px;
