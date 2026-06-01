@@ -59,7 +59,21 @@ Menu & Others
 <ul>
     <li><a href="menu.html">Menu</a></li>
     <li><a href="#About">About</a></li>
-    <li><a href="#">Services</a></li>
+    <li>
+        <button type="button" id="openModal">Services</button>
+        <div class="modal" id="modal">
+            <div class="modal-inner">
+                <h2>Services</h2>
+                    <p>We offer a refined café experience with premium coffee,
+                    handcrafted beverages, freshly prepared desserts, 
+                    and exceptional hospitality. Whether you're meeting friends, 
+                    working, or enjoying a quiet moment, our elegant atmosphere and 
+                     attentive service ensure a memorable visit every time.
+                    </p>
+                <button id="closeModal">Close</button>
+            </div>
+        </div>
+    </li>
     <li><a href="#">Contact Us</a></li>
 </ul>
 
@@ -176,6 +190,17 @@ document.addEventListener("DOMContentLoaded", () => {
 
     });
 
+});
+
+const openBtn = document.getElementById("openModal");
+const closeBtn = document.getElementById("closeModal");
+const modal = document.getElementById("modal");
+
+openBtn.addEventListener("click", () => {
+    modal.classList.add("open");
+});
+closeBtn.addEventListener("click", () => {
+    modal.classList.remove("open");
 });
 
 </script>
