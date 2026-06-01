@@ -37,6 +37,7 @@ header{
     display:inline-block;
 }
 
+
 .anchor:hover{
     color:#b48e67;
     transform:translateY(-3px);
@@ -79,6 +80,7 @@ header{
 }
 
 #collapsible-menu li a{
+    font-family: 'Times New Roman', Times, serif;
     display:block;
     padding:12px 16px;
     text-decoration:none;
@@ -144,14 +146,15 @@ header{
     border-radius:50px;
     width:300px;
     height:100px;
-
     font-family:"Lavishly Yours", cursive;
     font-size:2rem;
-
     transition:0.2s ease;
     cursor:pointer;
 }
 
+#Reserve a {
+    color: #F1E2D1;
+}
 #Reserve:hover{
     background-color:#633535;
     transform:translateY(-5px);
@@ -217,6 +220,72 @@ footer{
 
 #About{
     font-family:"DM Serif Display", serif;
+}
+
+.modal{
+    background-color: rgba(0,0,0,0.3);
+    opacity: 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    transition: all 0.3 ease-in-out;
+    z-index: -1;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.modal.open{
+    opacity: 1;
+    z-index: 999;
+}
+
+.modal-inner{
+    background-color: #DCC3AA;
+    border-radius: 50px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.3);
+    padding: 15px 25px;
+    text-align: center;
+    width: 380px;
+}
+
+.modal-inner h2{
+    color: #541A1A;
+    margin:0;
+    font-family:"Lavishly Yours", cursive;
+
+}
+
+.modal-inner p{
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    line-height:24px;
+    margin: 10px 0;
+}
+
+#openModal{
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1rem;
+    text-align: left;
+    display: inline-block;
+    width: 100%;
+    background-color:#DCC3AA;
+    border-color: rgba(0, 0, 0, 0);
+    padding:10px 10px ;
+}
+#openModal:hover{
+    background-color: #541A1A;
+    color: #cbb095;
+    
+}
+
+#closeModal{
+    background-color: #541A1A;
+    border-radius: 50px;
+    color: #F1E2D1;
+    border-color: rgba(0, 0, 0, 0);
+
 }
 
 /* TABLET */
