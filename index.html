@@ -74,7 +74,23 @@ Menu & Others
             </div>
         </div>
     </li>
-    <li><a href="#">Contact Us</a></li>
+    <li>
+    <button type="button" id="openContactModal">Contact Us</button>
+
+    <div class="modal" id="contactModal">
+        <div class="modal-inner">
+            <h2>Contact Us</h2>
+
+            <p>
+                Phone: +962 79 025 6390<br>
+                Email: info@charisma.com<br>
+                Instagram: @charisma.cafe
+            </p>
+
+            <button id="closeContactModal">Close</button>
+        </div>
+    </div>
+</li>
 </ul>
 
 </nav>
@@ -201,6 +217,18 @@ openBtn.addEventListener("click", () => {
 });
 closeBtn.addEventListener("click", () => {
     modal.classList.remove("open");
+});
+
+const openContactBtn = document.getElementById("openContactModal");
+const closeContactBtn = document.getElementById("closeContactModal");
+const contactModal = document.getElementById("contactModal");
+
+openContactBtn.addEventListener("click", () => {
+    contactModal.classList.add("open");
+});
+
+closeContactBtn.addEventListener("click", () => {
+    contactModal.classList.remove("open");
 });
 
 </script>
